@@ -7,7 +7,8 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 </style>
-<script src=""></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <body>
 
     <div id = "topnav">
@@ -28,9 +29,24 @@
         </div>
         <div id="result_container">
             <div id="categories">
-
+                <button>Top 100</button>
+                <button>Results</button>
             </div>
+            {% for entry in results %}
+                <div id="text_container">
+                    <div id="result">
+                        <p>Name: {{ entry.name }}</p>
+                        <p>Language: {{ entry.language }}</p>
+                        <p>Link: {{ entry.link }}</p>
+                        <p>Difficulty: {{ entry.difficulty }}</p>
+                    </div>
+                </div>
+                <div id = "image_container">
+                    <img src="static\{{entry.language}}.png">
+                </div>
+            {% endfor %}
         </div>
     </div>
+    <script src="static\script.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import pickle
 from sklearn.linear_model import LinearRegression
 
@@ -15,7 +14,7 @@ df.info()
 X = df.drop(["Difficulty","Name"], axis=1)
 X.info()
 y = df["Difficulty"]
-
+    
 
 linear_reg = LinearRegression()
 linear_reg.fit(X, y.values)
